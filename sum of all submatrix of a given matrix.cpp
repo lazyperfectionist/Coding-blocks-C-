@@ -10,7 +10,7 @@ int main() {
 		cout<<endl;
 	}
 	cout<<endl;
-  //Two loops for fetching ith and jth index for top left
+    //Two loops for fetching ith and jth index for top left
     for(int tli=0;tli<n;tli++)
     {
     	for(int tlj=0;tlj<n;tlj++)
@@ -20,15 +20,16 @@ int main() {
     		{
     			for(int brj=tlj ;brj<n;brj++)
     			{
-          //two loops for fetching the elements betweeen top left index and bottom right index
-                    for(int i=tli;i<=bri;i++){
-                        for(int j=tlj;j<=brj;j++){
+                //Two loops for fetching the elements betweeen top left index and bottom right index
+                    for(int i=tli;i<=bri;i++)
+                    {
+                        for(int j=tlj;j<=brj;j++)
+                        {
                             int x=arr[i][j];
                             sum+=x;
                         }
                     }
     			}
-    		
     		}
     	}
     }
