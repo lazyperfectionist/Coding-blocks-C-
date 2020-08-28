@@ -23,6 +23,7 @@ int main() {
         for(int j=1;j<n;j++){
             pref_arr[i][j] = pref_arr[i-1][j] + pref_arr[i][j-1] + arr[i][j] - pref_arr[i-1][j-1];
         }
+    }
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
             cout<<pref_arr[i][j]<<" ";
@@ -39,12 +40,17 @@ int main() {
             {
                 for(int brj=tlj;brj<n;brj++)
                 {
-                    //this part is not working will fix it soon 
-                   sum = sum + pref_arr[bri][brj] - pref_arr[bri][tlj-1] - pref_arr[tli-1][brj] + pref_arr[tli-1][tlj-1];
-        
+                   //sum = sum + pref_arr[bri][brj] - pref_arr[bri][tlj-1] - pref_arr[tli-1][brj] + pref_arr[tli-1][tlj-1];
+                    sum+=pref_arr[bri][brj];
+                    if(tli>0)
+                        sum-=pref_arr[tli-1][brj];
+                    if(tlj>0)
+                        sum-=pref_arr[bri][tlj-1];
+                    if(tli>0 && tlj>0)
+                        sum+=pref_arr[tli-1][tlj-1];
                 }
             }
         }
     }
+    cout<<endl<<"Sum of all submatrics : "<<sum<<endl;
 }   
-}
