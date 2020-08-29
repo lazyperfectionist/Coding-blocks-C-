@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int m,n,key=6;
+    cout<<"Enter number of rows and columns of matrix"<<endl;
+    cin>>m>>n;
+    int arr[m][n]={0};
+    int suff_arr[m][n]={0};
+    cout<<"Enter elements"<<endl;
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            cin>>arr[i][j];
+        }
+    }
+
+    int i=0,j=n-1;
+    while(i<m and j>=0){
+        int x=arr[i][j];
+        if(x == key){
+            cout<<"Found at "<<i<<" "<<j;
+            return 1;
+        }
+        if(key<x){
+            j--;
+        }
+        else{
+            i++;
+        }
+    }
+    cout<<"Not found";
+    return -1;
+
+    /*int i = 0, j = n - 1;  
+    while (i < n && j >= 0) { 
+        if (mat[i][j] == x) { 
+            cout << "n Found at "
+                 << i << ", " << j; 
+            return 1; 
+        } 
+        if (mat[i][j] > x) 
+            j--; 
+        else // if mat[i][j] < x 
+            i++; 
+    } 
+  
+    cout << "n Element not found"; 
+    return 0; // if ( i==n || j== -1 ) 
+} */
+
+}
