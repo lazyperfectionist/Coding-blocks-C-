@@ -12,7 +12,6 @@ int main(){
             cin>>arr[i][j];
         }
     }
-
     int i=0,j=n-1;
     while(i<m and j>=0){
         int x=arr[i][j];
@@ -20,16 +19,18 @@ int main(){
             cout<<"Found at "<<i<<" "<<j;
             return 1;
         }
-        if(key<x){
+        if(x>key){
+        //Found element is greater than our key then we will check in that row:
+        //Moving backward in that row
             j--;
         }
         else{
+        //Moving downward
             i++;
         }
     }
     cout<<"Not found";
     return -1;
-
     /*int i = 0, j = n - 1;  
     while (i < n && j >= 0) { 
         if (mat[i][j] == x) { 
@@ -41,10 +42,8 @@ int main(){
             j--; 
         else // if mat[i][j] < x 
             i++; 
-    } 
-  
+    }
     cout << "n Element not found"; 
     return 0; // if ( i==n || j== -1 ) 
-} */
-
+    }*/
 }
