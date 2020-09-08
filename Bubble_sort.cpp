@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
-int bubble_sort(int a[],int len)
+void bubble_sort(int a[],int len)
 {
-    for(int i=1;i<len-1;i++)
+    for(int i=1;i<len;i++)
     {
-        for(int j=0;j<len;j++)
+        for(int j=0;j<=(len-i-1);j++)
         {
             if(a[j]>a[j+1])
             {
