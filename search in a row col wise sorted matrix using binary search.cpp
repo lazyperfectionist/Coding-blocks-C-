@@ -1,33 +1,41 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 int main(){
-    int row,col;
-    row=3;
-    col = 3;
-    int key = 7;
-    int arr[row][col] = {{1,2,3},{4,5,6},{7,8,9}};
-    for(int i=0;i<row;i++){
-        for(int j=0;j<col;j++){
+    int m,n,key;
+    cout<<"Enter number of rows and columns of matrix"<<endl;
+    cin>>m>>n;
+    int arr[m][n];
+    int val=1;
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            arr[i][j]=val;
+            val+=1;
+        }
+    }
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
             cout<<arr[i][j]<<" ";
-        } 
+        }
         cout<<endl;
     }
-    for(int i=0;i<row;i++){
-        int start = 0;
-        int end=col-1;
-        while(start<=end){
-            int mid = (start+end)/2;
-            if(arr[i][mid]==key){
-                cout<<"found at index "<<i<<" "<<mid<<endl;
-                break;
-            }
-            else if(arr[i][mid] <key){
-                start++;
-            }
-            else{
-                end--;
-            }
-
-        }
+    cout<<"enter key"<<endl;
+    cin>>key;
+    for(int i=0;i<m;i++){
+        //applying binary search on each row: 
+    	int start = 0,end = n-1;
+    	while(start<=end){
+    		int mid =(start+end)/2;
+    		int element = arr[i][mid];
+    		if(element == key){
+    			cout<<"found at "<<i<<","<<mid<<endl;
+    			break;
+    		}
+    		else if(element > key){
+    			end = mid-1;
+    		}
+    		else{
+    			start = mid+1;
+    		}
+    	}
     }
 }
