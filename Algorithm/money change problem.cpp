@@ -21,6 +21,10 @@ int main(){
 
                                             // OR YOU CAN DO THIS ALSO : 
 
+//No this wont work because lowerbound return a number greater than or equal to 	the number passed : 
+//upper bound returns a number strictly greater than the number passed :  
+
+
 
 #include <iostream>
 #include<algorithm>
