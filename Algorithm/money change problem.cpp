@@ -16,3 +16,29 @@ int main(){
     
 
 }
+
+
+
+                                            // OR YOU CAN DO THIS ALSO : 
+
+
+#include <iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+	int money = 168;
+	int coins[] = {1,2,5,10,20,50,100,200,500,2000};
+	int n = sizeof(coins)/sizeof(int);
+
+
+	while(money>=0){
+	int *mon = lower_bound(coins,coins+n,money);
+	if(mon-coins ==0){
+		cout<<1<<endl;
+	}
+	else{
+		cout<<coins[mon-coins-1]<<endl;
+	}
+	money = money-coins[mon-coins-1];
+	}
+}
