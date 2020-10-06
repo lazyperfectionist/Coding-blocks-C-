@@ -39,13 +39,14 @@ int main(){
     int a[1000],n,key;
     cout<<"enter number of elements: "<<endl;
     cin>>n;
+    cout<<"Enter elements : "<<endl;
     for(int i=0;i<n;i++){
         cin>>a[i];
     }
     cout<<"Enter element to search ";
     cin>>key;
     
-    cout<<first_occurence(a,n,key)<<endl;
-   	cout<<last_occurence(a,n,key)<<endl;
+    cout<<"First occurence : "<<first_occurence(a,n,key)<<endl;
+   	cout<<"Last occurence : "<<last_occurence(a,n,key)<<endl;
 
 }
