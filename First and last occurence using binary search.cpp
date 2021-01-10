@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+//implementation of lower bound
 int first_occurence(int a[],int n,int key){
     int s=0,e=n-1,ans=-1;
     while(s<=e){
@@ -17,6 +18,7 @@ int first_occurence(int a[],int n,int key){
     }
     return ans;
 }
+//implementation of upper bound: 
 int last_occurence(int a[],int n,int key){
     int s=0,e=n-1,ans=-1;
     while(s<=e){
